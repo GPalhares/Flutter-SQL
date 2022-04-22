@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mysql/View/Home_Page/users_page.dart';
 
 import '../View/Home_Page/login_page.dart';
 import '../View/Home_Page/register_page.dart';
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
         '/first': (context) => const LoginPage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const RegisterPage(),
+
+        '/third': (context) => const UsersPage(),
       },
     );
   }

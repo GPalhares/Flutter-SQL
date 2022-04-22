@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+import 'users_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mysql/View/Custom_Widgets/text_field_custom.dart';
+import 'package:flutter_mysql/View/Home_Page/register_page.dart';
 
-import '../../Custom_Widgets/custom_button.dart';
-import '../../Custom_Widgets/text_field_custom.dart';
+import '../Custom_Widgets/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                 iconImage: Icon(Icons.email),
                 textHint: 'Use a valid email',
                 textLabel: 'Email',
+                controller: emailController,
               ),
               Padding(padding: EdgeInsets.all(5)),
               CustomTextField(
@@ -34,12 +36,19 @@ class _LoginPageState extends State<LoginPage> {
                 iconImage: Icon(Icons.lock),
                 textHint: 'Use a safe password',
                 textLabel: 'Password',
+                controller: passwordController,
               ),
               Padding(padding: EdgeInsets.all(15)),
               CustomButton(
                   textButton: 'Login',
                   buttonTap: () {
                     Navigator.pushNamed(context, '/second');
+                  }),
+              Padding(padding: EdgeInsets.all(15)),
+              CustomButton(
+                  textButton: 'Users',
+                  buttonTap: () {
+                    Navigator.pushNamed(context, '/third');
                   }),
             ],
           ),
